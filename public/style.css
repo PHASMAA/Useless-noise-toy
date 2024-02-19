@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;/*disables pull to refresh on mobile devices*/
+}
+canvas {
+  display: block;
+}
+
+body{
+  background: white;
+}
+
+main{
+  position:fixed;
+  width: 100%;
+  height:100%;
+}
+
+.ask{
+  z-index: 1000;
+    position: fixed;
+}
+
+#sketch-container{
+  width: 100%;
+  height: 100%;
+}
+
+#gui-container{
+  position: fixed;
+  top: 0;
+  left: -40%;
+  z-index: 100;
+  width: 40%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255, 0.9);
+  transition: all .3s;
+}
+
+#gui-container.open{
+  left: 0px;
+}
+
+/*styled button */
+#gui-container .button{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: -55px;
+  top: 15px;
+  background-color: rgb(255, 255, 255, 0.9);
+  border: transparent;
+  box-sizing: border-box;
+  border-radius: 50%;
+  color: #383643;
+  padding: 0px !important;
+  position: absolute;
+  font-size: 25px;
+  cursor: pointer;
+}
+#gui-container .button:hover{
+  color: grey;
+}
+
+#gui-container.open .button{
+  transform: scale(-1,1);
+}
+
+
+
+html, input {
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+}
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+/* Login Page */
+
+#login.page {
+  background-color: #000000;
+}
+
+#login.page #login-form{
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+#login.page #login-form .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+#login.page .title {
+  font-size: 200%;
+}
+
+#login.page .usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+#login.page .title, #login.page .usernameInput {
+  color: #ffffff;
+  font-weight: 100;
+}
+
+.page.hide{
+  display: none;
+}
+
+
+/* Font */
+
+
+.log {
+  color: gray;
+  font-size: 70%;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Messages */
+
+.chatArea {
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.message-scroll {
+  display: flex;
+  flex-direction: column-reverse;/*so that our message stick to the bottom of the message area*/
+  font-size: 150%;
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;/*so that our messages scroll when there are too many to fit in the window*/
+  padding: 0px 15px 60px 15px;
+}
+
+.message.typing .messageBody {
+  color: gray;
+}
+
+.username {
+  font-weight: 700;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
+
+/* Input */
+
+
+
+/* Media Queries for responsive design */
+
+/* Custom to match our canvas size */
+@media screen and (max-width: 750px) {
+  /* none for this one so far, but remember you can add them! */
+  
+  #gui-container{
+    left: -80%;
+    width: 80%;
+  }
+}
